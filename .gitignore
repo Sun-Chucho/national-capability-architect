@@ -2,4 +2,6 @@ node_modules/
 dist/
 .vercel/
 *.log
-*-qa.png
+*-qa*.png
+full-qa*.png
+mobile-full-qa*.png

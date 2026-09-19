@@ -45,4 +45,9 @@ const observer = new IntersectionObserver((entries) => {
 }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+// Never leave editorial content hidden when a visitor lands directly on a deep link,
+// restores a background tab, or uses a browser that throttles IntersectionObserver.
+window.setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach((element) => element.classList.add('visible'));
+}, 1200);
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
